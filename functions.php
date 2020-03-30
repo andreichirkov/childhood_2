@@ -9,7 +9,7 @@
 		//первый название со стилем, чтобы отличить, второй аргумент какой именно файл. это стандартный хук
 		// когда будут подключаться скрипты мы туда впихнем доп стиль
 
-		wp_enqueue_script('childhood-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
+		wp_enqueue_script('childhood-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true) ;
 
 		//название скрипта, путь начало+продолжение через точку, зависимость, хз, и булиновое значение в футере или нет, у нас "да" поэтому тру
 		//зависимость можно куказать от джейкверри, он сам подключен в wp всегда изначально
