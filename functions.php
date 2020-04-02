@@ -17,5 +17,18 @@
 
 	add_theme_support('custom-logo');
 	add_theme_support( 'post-thumbnails' ); //для вывода миниатюры постов (делается для превью игрушек)
+	add_theme_support( 'menus' ); //для создания меню
 
+	add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 3);
+	function filter_nav_menu_link_attributes( $atts, $item, $args ) {
+		if ( $args->menu === 'Main') {
+			$atts['class'] = 'header__nav-item';
+
+			if ($item->current) {
+				$atts['class'] .= ' header__nav-item-active'; //точкой мы склеиваем 2 класса
+			}//но проблей чтобы не склеить совсем а оставить 2 класа
+		};
+
+		return $atts;
+	}
 ?>
